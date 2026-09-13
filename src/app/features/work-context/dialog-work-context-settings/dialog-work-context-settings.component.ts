@@ -153,7 +153,7 @@ export class DialogWorkContextSettingsComponent {
     this._matDialogRef.close();
   }
 
-  private _applyChanges(data: Project | Tag, isSkipSnack?: boolean): void {
+  private _applyChanges(data: Project | Tag, isCancelled?: boolean): void {
     const theme: WorkContextThemeCfg = { ...data.theme };
     if (this.isProject) {
       const p = data as Project;
@@ -166,7 +166,7 @@ export class DialogWorkContextSettingsComponent {
           isHiddenFromMenu: p.isHiddenFromMenu,
           theme,
         },
-        isSkipSnack,
+        isCancelled,
       );
     } else {
       const t = data as Tag;
