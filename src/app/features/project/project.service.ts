@@ -417,7 +417,7 @@ export class ProjectService {
   update(
     projectId: string,
     changedFields: Partial<Project>,
-    isCancelled?: boolean,
+    isSkipSnack?: boolean,
   ): void {
     this._store$.dispatch(
       updateProject({
@@ -425,7 +425,7 @@ export class ProjectService {
           id: projectId,
           changes: changedFields,
         },
-        isCancelled,
+        isSkipSnack,
       }),
     );
   }
